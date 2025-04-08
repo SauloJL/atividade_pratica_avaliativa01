@@ -12,7 +12,7 @@
 
     <div class="resultado-container">
         <?php 
-        // Verificar se form foi enviado
+            // Verificar se form foi enviado
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Receber os campos do form em suas respectivas variaveis
@@ -24,12 +24,17 @@
                 $valor_kwh      = $_POST['valor_kwh'];
 
                 // Cálculos
+
+                // Consumo diário:
                 $x = $consumo_maximo / 1000;
-                $consumo_diario = $x * $horas_por_dia;
+                $consumo_diario = $x * $horas_por_dia; // x * horas que o aparelho fica ligado por dia
+
+                // Consumo mensal:
                 $consumo_mensal = $consumo_diario * $dias_por_mes;
                 $custo_mensal = $consumo_mensal * $valor_kwh;
 
                 // Definir categoria de consumo
+
                 if ($custo_mensal <= 5) {
                     $categoria = "Baixa";
                 } elseif ($custo_mensal <= 10) {
