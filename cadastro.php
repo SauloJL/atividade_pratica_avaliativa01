@@ -12,7 +12,7 @@
 
     <div class="resultado-container">
         <?php 
-        // Verificar se form foi enviado
+            // Verificar se form foi enviado
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Receber os campos do form em suas respectivas variaveis
